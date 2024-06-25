@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Word Count Example</title>
+<script>
+function countWords() {
+    var sentence = prompt("Please enter a sentence:");
+    if (sentence) {
+        var words = sentence.split(" ");
+        var wordCount = words.length;
+        alert("The number of words in your sentence is: " + wordCount);
+    } else {
+        alert("No sentence was entered.");
+    }
+}
+</script>
+</head>
+<body>
+    <button onclick="countWords()">Count Words in Your Sentence</button>
+</body>
+</html>

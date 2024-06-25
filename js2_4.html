@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Greeting Form</title>
+<script>
+window.onload = function() {
+    var buttons = document.querySelectorAll('button');
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            speak(this.textContent);
+        });
+    });
+};
+
+function speak(greeting) {
+    var name = document.getElementById('nameInput').value;
+    if (name.trim() !== "") {
+        alert(greeting + " " + name);
+    } else {
+        alert("Please enter a name.");
+    }
+}
+</script>
+</head>
+<body>
+    <form>
+        <label for="nameInput">Enter your name:</label>
+        <input type="text" id="nameInput" name="nameInput">
+
+        <button type="button">Hello</button>
+        <button type="button">Good Bye</button>
+        <button type="button">Greetings</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Name List Display</title>
+<script>
+function displayNames() {
+    var namesString = "Pat, Chris, Marlon, Ferncroft, Assunta";
+    var namesArray = namesString.split(", ");
+    var listItems = namesArray.map(function(name) {
+        return "<li>" + name + "</li>";
+    });
+    var listString = "<ol>" + listItems.join("") + "</ol>";
+    document.getElementById("nameList").innerHTML = listString;
+}
+</script>
+</head>
+<body>
+    <button onclick="displayNames()">Display Names</button>
+    <div id="nameList"></div>
+</body>
+</html>

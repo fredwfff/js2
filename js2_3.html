@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Greeting Form</title>
+<script>
+function speak(prefix) {
+    var name = document.getElementById('nameInput').value;
+    if (name.trim() !== "") {
+        alert(prefix + " " + name);
+    } else {
+        alert("Please enter a name.");
+    }
+}
+</script>
+</head>
+<body>
+    <form>
+        <label for="nameInput">Enter your name:</label>
+        <input type="text" id="nameInput" name="nameInput">
+
+        <button type="button" onclick="speak('Hello')">Hello</button>
+        <button type="button" onclick="speak('Good Bye')">Good Bye</button>
+        <button type="button" onclick="speak('Greetings')">Greetings</button>
+    </form>
+</body>
+</html>

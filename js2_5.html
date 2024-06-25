@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>State Selector</title>
+<style>
+    #stateListDiv {
+        border: 1px solid #000;
+        margin-top: 10px;
+        padding: 5px;
+        min-height: 50px;
+    }
+</style>
+</head>
+<body>
+    <select id="stateSelector" size="10"></select>
+    <button onclick="addState()">Add State</button>
+
+    <div id="stateListDiv"></div>
+    <button onclick="clearStates()">Clear States</button>
+
+<script>
+    const states = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia"];
+
+    window.onload = function() {
+        const selectElement = document.getElementById('stateSelector');
+
+        states.forEach(state => {
+            const option = document.createElement('option');
+            option.text = state;
+            selectElement.add(option);
+        });
+
+        selectElement.options[0].selected = true;
+    };
+
+    function addState() {
+        const selectedState = document.getElementById('stateSelector').value;
+        const stateListDiv = document.getElementById('stateListDiv');
+        stateListDiv.innerHTML += selectedState + "<br>";
+    }
+
+    function clearStates() {
+        document.getElementById('stateListDiv').innerHTML = "";
+    }
+</script>
+</body>
+</html>
